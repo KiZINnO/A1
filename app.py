@@ -5,31 +5,12 @@ import numpy as np
 import pickle
 
 # Load the pre-trained model
-with open("car_selling_price.model", "rb") as f:
+with open("./code/model/car_selling_price.model", "rb") as f:
     model = pickle.load(f)
 
 # Initialize Dash app
 app = dash.Dash(__name__)
 
-# App layout
-# app.layout = html.Div([
-#     html.H1("Car Selling Price Prediction", style={"textAlign": "center"}),
-
-#     html.Div([
-#         html.Label("Year of Manufacture:"),
-#         dcc.Input(id="input-year", type="number", placeholder="Enter year", required=True),
-        
-#         html.Label("Mileage (in KM/L):"),
-#         dcc.Input(id="input-mileage", type="number", placeholder="Enter mileage", required=True),
-        
-#         html.Label("Max Power (in HP):"),
-#         dcc.Input(id="input-maxpower", type="number", placeholder="Enter max power", required=True),
-
-#         html.Button("Calculate", id="predict-button", n_clicks=0),
-#     ], style={"width": "50%", "margin": "auto", "padding": "20px", "border": "1px solid black", "borderRadius": "10px"}),
-
-#     html.Div(id="output-prediction", style={"textAlign": "center", "marginTop": "20px", "fontSize": "20px"})
-# ])
 
 # App layout
 app.layout = html.Div([
@@ -63,7 +44,6 @@ app.layout = html.Div([
 
     html.Div(id="output-prediction", style={"textAlign": "center", "marginTop": "20px", "fontSize": "20px"})
 ])
-
 
 
 # Callback to handle prediction
